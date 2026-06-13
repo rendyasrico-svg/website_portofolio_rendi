@@ -1,0 +1,1186 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:transparent;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* ================= NAV RIGHT (Theme toggle + Hamburger) ================= */
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* ================= MENU HAMBURGER ================= */
+
+.menu-toggle{
+    width:55px;
+    height:55px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.menu-toggle:hover{
+    background:#f5c542;
+}
+
+.menu-toggle i{
+    font-size:28px;
+    color:#f5c542;
+}
+
+.menu-toggle:hover i{
+    color:black;
+}
+
+/* ================= MENU SIDE ================= */
+
+.nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+
+    width:78%;
+    max-width:320px;
+    height:100vh;
+
+    background:#111;
+
+    list-style:none;
+
+    padding:90px 20px 20px;
+
+    transition:0.4s ease;
+
+    z-index:999;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,0.5);
+
+    overflow-y:auto;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+/* tombol close */
+
+.close-menu{
+    position:absolute;
+    top:25px;
+    right:25px;
+
+    width:50px;
+    height:50px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.05);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+}
+
+.close-menu i{
+    color:#f5c542;
+    font-size:24px;
+}
+
+/* item menu */
+
+.nav-links li{
+    margin-bottom:10px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+
+    font-size:16px;
+
+    display:block;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    background:#1e1e1e;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:#f5c542;
+    color:black;
+
+    transform:translateX(5px);
+}
+
+/* judul "Menu" sejajar dengan tombol close */
+
+.nav-links::before{
+    content:"Menu";
+    display:flex;
+    align-items:center;
+
+    position:absolute;
+    top:25px;
+    left:30px;
+
+    color:#f5c542;
+    font-size:22px;
+    font-weight:bold;
+}
+
+body.light-mode .nav-links::before{
+    color:#d4a900;
+}
+
+/* ========================= */
+/* DARK MODE */
+/* ========================= */
+
+#theme-toggle{
+    background:#d4af37;
+    border:none;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    color:black;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:140px 25px 70px;
+
+    position:relative;
+
+    background:transparent;
+}
+
+.hero-content{
+    max-width:500px;
+}
+
+.hero-image img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #d4af37;
+    margin-bottom:30px;
+    box-shadow:0 0 40px rgba(212,175,55,0.5);
+}
+
+.hero h2{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero h2 span{
+    color:#d4af37;
+}
+
+.hero h3{
+    color:#d4af37;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+section{
+    padding:100px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:50px;
+}
+
+/* ========================= */
+/* BOX */
+/* ========================= */
+
+.about-box,
+.cv-box,
+.skill-card,
+.project-card,
+.achievement-card,
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+}
+
+/* ========================= */
+/* ABOUT */
+/* ========================= */
+
+.about-box p{
+    margin-bottom:20px;
+    line-height:1.8;
+    font-size:20px;
+}
+
+/* ========================= */
+/* CV */
+/* ========================= */
+
+.cv-box h3{
+    color:#d4af37;
+    margin:20px 0;
+}
+
+.cv-box p,
+.cv-box li{
+    margin-bottom:15px;
+    font-size:19px;
+}
+
+/* ========================= */
+/* SKILLS */
+/* ========================= */
+
+.skills-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    max-width:800px;
+    margin:auto;
+}
+
+.progress{
+    width:100%;
+    height:14px;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    background:#d4af37;
+}
+
+/* ========================= */
+/* PROJECT */
+/* ========================= */
+
+.project-container,
+.achievement-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    max-width:800px;
+    margin:auto;
+}
+
+.project-card,
+.achievement-card{
+    transition:0.3s;
+}
+
+.project-card:hover,
+.achievement-card:hover{
+    transform:translateY(-5px);
+    border:1px solid #d4af37;
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+.contact-box{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-box a{
+    text-decoration:none;
+    color:white;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.contact-box a:hover{
+    color:#d4af37;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+/* ========================= */
+/* LIGHT MODE */
+/* ========================= */
+
+body.light-mode{
+    background:#f5f5f5;
+    color:black;
+}
+
+body.light-mode header{
+    background:rgba(255,255,255,0.8);
+}
+
+body.light-mode .nav-links{
+    background:white;
+}
+
+body.light-mode{
+    background:transparent;
+    color:black;
+}
+
+body.light-mode .about-box,
+body.light-mode .cv-box,
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .achievement-card,
+body.light-mode .contact-box{
+    background:white;
+    color:black;
+}
+
+body.light-mode .hero{
+    background:#f5f5f5;
+}
+
+body.light-mode .hero p{
+    color:#333;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .hero h2{
+        font-size:42px;
+    }
+
+    .hero h3{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .hero-image img{
+        width:200px;
+        height:200px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+}
+
+/* ================= LIGHT MODE MENU ================= */
+
+body.light-mode .nav-links{
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+}
+
+body.light-mode .nav-links a{
+    background: #f0f0f0;
+    color: black;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light-mode .nav-links a:hover{
+    background: #f5c542;
+    color: black;
+}
+
+body.light-mode .nav-links li{
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light-mode .close-menu{
+    background: rgba(0,0,0,0.05);
+}
+
+body.light-mode .close-menu i{
+    color: #f5c542;
+}
+
+body.light-mode .menu-toggle{
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+body.light-mode .menu-toggle i{
+    color: #f5c542;
+}
+
+/* ================= CONTACT ICON ================= */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-top:30px;
+}
+
+.social-icons a{
+    width:70px;
+    height:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:2px solid rgba(255,255,255,0.1);
+
+    color:#f5c542;
+
+    font-size:32px;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#f5c542;
+    color:black;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 20px rgba(245,197,66,0.5);
+}
+
+/* LIGHT MODE */
+
+body.light-mode .social-icons a{
+    background:white;
+
+    border:2px solid #f5c542;
+
+    color:#d4a900;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.light-mode .social-icons a:hover{
+    background:#f5c542;
+    color:black;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.animated-bg{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(245,197,66,0.18),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,0.05),
+    transparent 25%),
+
+    #0d0d0d;
+}
+
+/* bintang */
+
+.animated-bg span{
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    background:#f5c542;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #f5c542,
+    0 0 20px #f5c542,
+    0 0 40px #f5c542;
+
+    animation:
+    floating 10s linear infinite;
+}
+
+/* posisi random */
+
+.animated-bg span:nth-child(1){
+    top:10%;
+    left:15%;
+    animation-duration:8s;
+}
+
+.animated-bg span:nth-child(2){
+    top:25%;
+    left:80%;
+    animation-duration:12s;
+}
+
+.animated-bg span:nth-child(3){
+    top:70%;
+    left:20%;
+    animation-duration:9s;
+}
+
+.animated-bg span:nth-child(4){
+    top:50%;
+    left:60%;
+    animation-duration:14s;
+}
+
+.animated-bg span:nth-child(5){
+    top:80%;
+    left:90%;
+    animation-duration:11s;
+}
+
+.animated-bg span:nth-child(6){
+    top:35%;
+    left:40%;
+    animation-duration:13s;
+}
+
+.animated-bg span:nth-child(7){
+    top:15%;
+    left:55%;
+    animation-duration:7s;
+}
+
+.animated-bg span:nth-child(8){
+    top:90%;
+    left:10%;
+    animation-duration:15s;
+}
+
+/* =========================
+   UNDERWATER BACKGROUND
+========================= */
+
+.ocean{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #021522,
+    #03263a,
+    #021018
+    );
+}
+
+/* gelembung */
+
+.bubble{
+    position:absolute;
+
+    bottom:-100px;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.15);
+
+    animation:
+    bubble 15s infinite linear;
+}
+
+.x1{
+    left:10%;
+    width:15px;
+    height:15px;
+}
+
+.x2{
+    left:30%;
+    animation-duration:12s;
+}
+
+.x3{
+    left:50%;
+    width:25px;
+    height:25px;
+}
+
+.x4{
+    left:70%;
+    animation-duration:18s;
+}
+
+.x5{
+    left:90%;
+    width:12px;
+    height:12px;
+}
+
+/* animasi bubble */
+
+/* =========================
+   IKAN REALISTIS
+========================= */
+
+.fish{
+    position:absolute;
+
+    font-size:45px;
+
+    opacity:0.9;
+
+    animation-name:swimFish;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+    filter:
+    drop-shadow(0 0 8px rgba(255,255,255,0.3));
+}
+
+/* ikan 1 */
+
+.fish1{
+    top:20%;
+    left:-15%;
+
+    animation-duration:18s;
+}
+
+/* ikan 2 */
+
+.fish2{
+    top:50%;
+    left:-20%;
+
+    animation-duration:25s;
+
+    transform:scaleX(-1);
+}
+
+/* ikan 3 */
+
+.fish3{
+    top:75%;
+    left:-18%;
+
+    animation-duration:22s;
+}
+
+/* =========================
+   ANIMASI IKAN
+========================= */
+
+@keyframes swimFish{
+
+    0%{
+        transform:
+        translateX(-200px)
+        translateY(0px)
+        rotate(0deg);
+    }
+
+    20%{
+        transform:
+        translateX(20vw)
+        translateY(-15px)
+        rotate(2deg);
+    }
+
+    40%{
+        transform:
+        translateX(40vw)
+        translateY(10px)
+        rotate(-2deg);
+    }
+
+    60%{
+        transform:
+        translateX(60vw)
+        translateY(-10px)
+        rotate(2deg);
+    }
+
+    80%{
+        transform:
+        translateX(80vw)
+        translateY(15px)
+        rotate(-2deg);
+    }
+
+    100%{
+        transform:
+        translateX(120vw)
+        translateY(0px)
+        rotate(0deg);
+    }
+
+}
+
+/* =========================
+   RUMPUT LAUT REALISTIS
+========================= */
+
+.seaweed{
+    position:absolute;
+
+    bottom:-20px;
+
+    width:18px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    to top,
+    #0a5f3c,
+    #27ae60
+    );
+
+    transform-origin:bottom;
+
+    animation:
+    seaMove ease-in-out infinite;
+}
+
+/* banyak rumput laut */
+
+.seaweed1{
+    left:2%;
+    height:180px;
+    animation-duration:4s;
+}
+
+.seaweed2{
+    left:8%;
+    height:240px;
+    animation-duration:5s;
+}
+
+.seaweed3{
+    left:14%;
+    height:200px;
+    animation-duration:6s;
+}
+
+.seaweed4{
+    left:22%;
+    height:260px;
+    animation-duration:4.5s;
+}
+
+.seaweed5{
+    left:30%;
+    height:170px;
+    animation-duration:5.5s;
+}
+
+.seaweed6{
+    left:40%;
+    height:230px;
+    animation-duration:6s;
+}
+
+.seaweed7{
+    left:52%;
+    height:280px;
+    animation-duration:4.2s;
+}
+
+.seaweed8{
+    left:64%;
+    height:200px;
+    animation-duration:5.2s;
+}
+
+.seaweed9{
+    left:74%;
+    height:250px;
+    animation-duration:4.8s;
+}
+
+.seaweed10{
+    left:84%;
+    height:220px;
+    animation-duration:6s;
+}
+
+.seaweed11{
+    left:92%;
+    height:190px;
+    animation-duration:5s;
+}
+
+/* gerakan ombak */
+
+@keyframes seaMove{
+
+    0%{
+        transform:
+        rotate(0deg);
+    }
+
+    25%{
+        transform:
+        rotate(4deg);
+    }
+
+    50%{
+        transform:
+        rotate(-4deg);
+    }
+
+    75%{
+        transform:
+        rotate(3deg);
+    }
+
+    100%{
+        transform:
+        rotate(0deg);
+    }
+
+}
+
+@keyframes wave{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    50%{
+        transform:rotate(5deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+    }
+
+}
+
+/* supaya section transparan */
+
+.card,
+header{
+    background:
+    rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+}
+
+/* =========================
+   LIGHT MODE OCEAN
+========================= */
+
+body.light-mode .ocean{
+
+    background:
+    linear-gradient(
+    to bottom,
+    #bfe9ff,
+    #dff6ff,
+    #f5fbff
+    );
+
+}
+
+/* bubble terang */
+
+body.light-mode .bubble{
+    background:
+    rgba(255,255,255,0.5);
+}
+
+/* card transparan */
+
+body.light-mode .card,
+body.light-mode header{
+
+    background:
+    rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(12px);
+}
+
+/* teks */
+
+body.light-mode p,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode a{
+    color:black;
+}
+
+/* =========================
+   LIGHT MODE HERO PREMIUM
+========================= */
+
+body.light-mode .hero{
+
+    background:
+    rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.25);
+
+}
+
+/* teks hero */
+
+body.light-mode .hero h2,
+body.light-mode .hero h3{
+    color:#111;
+}
+
+body.light-mode .hero p{
+    color:#333;
+}
+
+/* nama gold */
+
+body.light-mode .hero span{
+    color:#c89b00;
+}
+/* ikan berbeda arah */
+
+.fish2{
+    animation-direction:reverse;
+}
+
+/* =========================
+   IKAN TAMBAHAN
+========================= */
+
+.fish4{
+    top:15%;
+    left:-10%;
+    animation-duration:28s;
+    font-size:35px;
+}
+
+.fish5{
+    top:35%;
+    left:-15%;
+    animation-duration:20s;
+    font-size:30px;
+}
+
+.fish6{
+    top:60%;
+    left:-12%;
+    animation-duration:32s;
+    font-size:45px;
+}
+
+.fish7{
+    top:80%;
+    left:-18%;
+    animation-duration:24s;
+    font-size:28px;
+}
+
+.fish8{
+    top:45%;
+    left:-25%;
+    animation-duration:30s;
+    font-size:38px;
+}
+
+.fish9{
+    top:70%;
+    left:-20%;
+    animation-duration:26s;
+    font-size:34px;
+}
+
+.fish10{
+    top:10%;
+    left:-15%;
+    animation-duration:35s;
+    font-size:50px;
+}
+
+/* =========================
+   PORTFOLIO LABEL
+========================= */
+
+.portfolio-label{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    background:
+    rgba(0,180,255,0.12);
+
+    border:
+    1px solid rgba(127,220,255,0.25);
+
+    color:#7fdcff;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 20px rgba(0,180,255,0.15);
+
+    animation:
+    glowLabel 3s ease-in-out infinite;
+}
+
+/* animasi glow */
+
+@keyframes glowLabel{
+
+    0%{
+        box-shadow:
+        0 0 10px rgba(0,180,255,0.1);
+    }
+
+    50%{
+        box-shadow:
+        0 0 25px rgba(0,180,255,0.3);
+    }
+
+    100%{
+        box-shadow:
+        0 0 10px rgba(0,180,255,0.1);
+    }
+}
